@@ -77,9 +77,9 @@ const ButterflyHero: React.FC<ButterflyHeroProps> = ({ onAnimationComplete }) =>
               />
             </motion.div>
 
-            {/* Enhanced Realistic Butterfly - Much Larger and More Detailed */}
+            {/* Enhanced Ultra-Realistic Butterfly - FIXED VISIBILITY */}
             <motion.div
-              className="relative mb-16"
+              className="relative mb-16 z-20"
               style={{
                 width: '90vw',
                 height: '70vh',
@@ -96,44 +96,46 @@ const ButterflyHero: React.FC<ButterflyHeroProps> = ({ onAnimationComplete }) =>
                 ease: "easeInOut"
               }}
             >
-              {/* Ultra-Realistic Butterfly SVG */}
+              {/* Ultra-Realistic Butterfly SVG - ENHANCED VISIBILITY */}
               <svg
                 viewBox="0 0 1000 800"
                 className="w-full h-full"
                 style={{ 
-                  filter: 'drop-shadow(0 0 80px rgba(255, 255, 255, 0.6))',
+                  filter: 'drop-shadow(0 0 80px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 40px rgba(255, 215, 0, 0.6))',
+                  opacity: 1,
+                  zIndex: 20
                 }}
               >
                 <defs>
                   {/* Enhanced Gradients for Ultra-Realistic Wing Patterns */}
                   <radialGradient id="upperWingGradient" cx="35%" cy="45%" r="65%">
                     <stop offset="0%" stopColor="rgba(255, 255, 255, 0.95)" />
-                    <stop offset="15%" stopColor="rgba(240, 240, 240, 0.9)" />
-                    <stop offset="30%" stopColor="rgba(220, 220, 220, 0.8)" />
-                    <stop offset="50%" stopColor="rgba(200, 200, 200, 0.7)" />
-                    <stop offset="70%" stopColor="rgba(180, 180, 180, 0.6)" />
-                    <stop offset="85%" stopColor="rgba(160, 160, 160, 0.5)" />
-                    <stop offset="100%" stopColor="rgba(140, 140, 140, 0.3)" />
+                    <stop offset="15%" stopColor="rgba(255, 248, 220, 0.9)" />
+                    <stop offset="30%" stopColor="rgba(255, 235, 180, 0.85)" />
+                    <stop offset="50%" stopColor="rgba(255, 215, 140, 0.8)" />
+                    <stop offset="70%" stopColor="rgba(255, 193, 100, 0.75)" />
+                    <stop offset="85%" stopColor="rgba(255, 165, 60, 0.7)" />
+                    <stop offset="100%" stopColor="rgba(255, 140, 20, 0.6)" />
                   </radialGradient>
                   
                   <radialGradient id="lowerWingGradient" cx="45%" cy="65%" r="55%">
-                    <stop offset="0%" stopColor="rgba(250, 250, 250, 0.9)" />
-                    <stop offset="25%" stopColor="rgba(230, 230, 230, 0.8)" />
-                    <stop offset="50%" stopColor="rgba(200, 200, 200, 0.7)" />
-                    <stop offset="75%" stopColor="rgba(170, 170, 170, 0.6)" />
-                    <stop offset="100%" stopColor="rgba(140, 140, 140, 0.4)" />
+                    <stop offset="0%" stopColor="rgba(255, 248, 220, 0.9)" />
+                    <stop offset="25%" stopColor="rgba(255, 235, 180, 0.85)" />
+                    <stop offset="50%" stopColor="rgba(255, 215, 140, 0.8)" />
+                    <stop offset="75%" stopColor="rgba(255, 193, 100, 0.75)" />
+                    <stop offset="100%" stopColor="rgba(255, 165, 60, 0.7)" />
                   </radialGradient>
 
                   <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="rgba(80, 80, 80, 0.95)" />
-                    <stop offset="25%" stopColor="rgba(100, 100, 100, 0.9)" />
-                    <stop offset="50%" stopColor="rgba(120, 120, 120, 0.85)" />
-                    <stop offset="75%" stopColor="rgba(90, 90, 90, 0.8)" />
-                    <stop offset="100%" stopColor="rgba(70, 70, 70, 0.75)" />
+                    <stop offset="0%" stopColor="rgba(139, 69, 19, 0.95)" />
+                    <stop offset="25%" stopColor="rgba(160, 82, 45, 0.9)" />
+                    <stop offset="50%" stopColor="rgba(205, 133, 63, 0.85)" />
+                    <stop offset="75%" stopColor="rgba(160, 82, 45, 0.8)" />
+                    <stop offset="100%" stopColor="rgba(101, 67, 33, 0.75)" />
                   </linearGradient>
 
                   <filter id="wingGlow">
-                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
                     <feMerge> 
                       <feMergeNode in="coloredBlur"/>
                       <feMergeNode in="SourceGraphic"/>
@@ -162,30 +164,32 @@ const ButterflyHero: React.FC<ButterflyHeroProps> = ({ onAnimationComplete }) =>
                   }}
                 >
                   {/* Main body with realistic texture */}
-                  <ellipse cx="500" cy="400" rx="8" ry="120" fill="url(#bodyGradient)" filter="url(#bodyTexture)" />
+                  <ellipse cx="500" cy="400" rx="10" ry="140" fill="url(#bodyGradient)" filter="url(#bodyTexture)" />
                   
                   {/* Detailed body segments */}
-                  <ellipse cx="500" cy="320" rx="6" ry="12" fill="rgba(90, 90, 90, 0.9)" />
-                  <ellipse cx="500" cy="350" rx="7" ry="15" fill="rgba(100, 100, 100, 0.85)" />
-                  <ellipse cx="500" cy="380" rx="8" ry="18" fill="rgba(110, 110, 110, 0.8)" />
-                  <ellipse cx="500" cy="410" rx="7" ry="16" fill="rgba(95, 95, 95, 0.8)" />
-                  <ellipse cx="500" cy="440" rx="6" ry="14" fill="rgba(85, 85, 85, 0.75)" />
-                  <ellipse cx="500" cy="470" rx="5" ry="12" fill="rgba(75, 75, 75, 0.7)" />
+                  <ellipse cx="500" cy="320" rx="8" ry="14" fill="rgba(139, 69, 19, 0.9)" />
+                  <ellipse cx="500" cy="350" rx="9" ry="17" fill="rgba(160, 82, 45, 0.85)" />
+                  <ellipse cx="500" cy="380" rx="10" ry="20" fill="rgba(205, 133, 63, 0.8)" />
+                  <ellipse cx="500" cy="410" rx="9" ry="18" fill="rgba(160, 82, 45, 0.8)" />
+                  <ellipse cx="500" cy="440" rx="8" ry="16" fill="rgba(139, 69, 19, 0.75)" />
+                  <ellipse cx="500" cy="470" rx="7" ry="14" fill="rgba(101, 67, 33, 0.7)" />
                   
                   {/* Head with realistic details */}
-                  <ellipse cx="500" cy="300" rx="8" ry="10" fill="rgba(70, 70, 70, 0.95)" />
+                  <ellipse cx="500" cy="300" rx="10" ry="12" fill="rgba(101, 67, 33, 0.95)" />
                   
                   {/* Eyes */}
-                  <circle cx="495" cy="295" r="2" fill="rgba(20, 20, 20, 0.9)" />
-                  <circle cx="505" cy="295" r="2" fill="rgba(20, 20, 20, 0.9)" />
+                  <circle cx="494" cy="295" r="3" fill="rgba(0, 0, 0, 0.9)" />
+                  <circle cx="506" cy="295" r="3" fill="rgba(0, 0, 0, 0.9)" />
+                  <circle cx="495" cy="294" r="1" fill="rgba(255, 255, 255, 0.8)" />
+                  <circle cx="507" cy="294" r="1" fill="rgba(255, 255, 255, 0.8)" />
                 </motion.g>
                 
                 {/* LEFT UPPER WING - Ultra-Realistic Shape and Movement */}
                 <motion.path
                   d="M500 360 Q350 200 200 230 Q100 260 110 360 Q120 460 220 490 Q320 510 400 480 Q460 440 500 400"
                   fill="url(#upperWingGradient)"
-                  stroke="rgba(120, 120, 120, 0.6)"
-                  strokeWidth="1.5"
+                  stroke="rgba(255, 215, 0, 0.8)"
+                  strokeWidth="2"
                   filter="url(#wingGlow)"
                   animate={{
                     d: [
@@ -206,8 +210,8 @@ const ButterflyHero: React.FC<ButterflyHeroProps> = ({ onAnimationComplete }) =>
                 <motion.path
                   d="M500 360 Q650 200 800 230 Q900 260 890 360 Q880 460 780 490 Q680 510 600 480 Q540 440 500 400"
                   fill="url(#upperWingGradient)"
-                  stroke="rgba(120, 120, 120, 0.6)"
-                  strokeWidth="1.5"
+                  stroke="rgba(255, 215, 0, 0.8)"
+                  strokeWidth="2"
                   filter="url(#wingGlow)"
                   animate={{
                     d: [
@@ -229,7 +233,7 @@ const ButterflyHero: React.FC<ButterflyHeroProps> = ({ onAnimationComplete }) =>
                 <motion.path
                   d="M500 420 Q420 520 360 560 Q300 600 280 640 Q290 680 330 670 Q380 650 430 620 Q470 580 500 540"
                   fill="url(#lowerWingGradient)"
-                  stroke="rgba(120, 120, 120, 0.5)"
+                  stroke="rgba(255, 193, 7, 0.7)"
                   strokeWidth="1.5"
                   filter="url(#wingGlow)"
                   animate={{
@@ -252,7 +256,7 @@ const ButterflyHero: React.FC<ButterflyHeroProps> = ({ onAnimationComplete }) =>
                 <motion.path
                   d="M500 420 Q580 520 640 560 Q700 600 720 640 Q710 680 670 670 Q620 650 570 620 Q530 580 500 540"
                   fill="url(#lowerWingGradient)"
-                  stroke="rgba(120, 120, 120, 0.5)"
+                  stroke="rgba(255, 193, 7, 0.7)"
                   strokeWidth="1.5"
                   filter="url(#wingGlow)"
                   animate={{
@@ -273,7 +277,7 @@ const ButterflyHero: React.FC<ButterflyHeroProps> = ({ onAnimationComplete }) =>
 
                 {/* Ultra-Realistic Wing Vein Patterns */}
                 <motion.g
-                  animate={{ opacity: [0.4, 0.8, 0.4] }}
+                  animate={{ opacity: [0.6, 1, 0.6] }}
                   transition={{
                     repeat: Infinity,
                     duration: 10,
@@ -281,26 +285,26 @@ const ButterflyHero: React.FC<ButterflyHeroProps> = ({ onAnimationComplete }) =>
                   }}
                 >
                   {/* Left wing detailed veins */}
-                  <path d="M500 360 Q400 320 300 340" stroke="rgba(100, 100, 100, 0.7)" strokeWidth="1" fill="none" />
-                  <path d="M480 380 Q380 360 280 380" stroke="rgba(100, 100, 100, 0.6)" strokeWidth="0.8" fill="none" />
-                  <path d="M460 400 Q360 400 260 420" stroke="rgba(100, 100, 100, 0.5)" strokeWidth="0.8" fill="none" />
-                  <path d="M440 420 Q340 440 240 460" stroke="rgba(100, 100, 100, 0.4)" strokeWidth="0.6" fill="none" />
+                  <path d="M500 360 Q400 320 300 340" stroke="rgba(255, 165, 0, 0.9)" strokeWidth="1.5" fill="none" />
+                  <path d="M480 380 Q380 360 280 380" stroke="rgba(255, 165, 0, 0.8)" strokeWidth="1.2" fill="none" />
+                  <path d="M460 400 Q360 400 260 420" stroke="rgba(255, 165, 0, 0.7)" strokeWidth="1.2" fill="none" />
+                  <path d="M440 420 Q340 440 240 460" stroke="rgba(255, 165, 0, 0.6)" strokeWidth="1" fill="none" />
                   
                   {/* Right wing detailed veins */}
-                  <path d="M500 360 Q600 320 700 340" stroke="rgba(100, 100, 100, 0.7)" strokeWidth="1" fill="none" />
-                  <path d="M520 380 Q620 360 720 380" stroke="rgba(100, 100, 100, 0.6)" strokeWidth="0.8" fill="none" />
-                  <path d="M540 400 Q640 400 740 420" stroke="rgba(100, 100, 100, 0.5)" strokeWidth="0.8" fill="none" />
-                  <path d="M560 420 Q660 440 760 460" stroke="rgba(100, 100, 100, 0.4)" strokeWidth="0.6" fill="none" />
+                  <path d="M500 360 Q600 320 700 340" stroke="rgba(255, 165, 0, 0.9)" strokeWidth="1.5" fill="none" />
+                  <path d="M520 380 Q620 360 720 380" stroke="rgba(255, 165, 0, 0.8)" strokeWidth="1.2" fill="none" />
+                  <path d="M540 400 Q640 400 740 420" stroke="rgba(255, 165, 0, 0.7)" strokeWidth="1.2" fill="none" />
+                  <path d="M560 420 Q660 440 760 460" stroke="rgba(255, 165, 0, 0.6)" strokeWidth="1" fill="none" />
                   
                   {/* Lower wing veins */}
-                  <path d="M500 420 Q450 480 400 520" stroke="rgba(100, 100, 100, 0.5)" strokeWidth="0.8" fill="none" />
-                  <path d="M500 420 Q550 480 600 520" stroke="rgba(100, 100, 100, 0.5)" strokeWidth="0.8" fill="none" />
+                  <path d="M500 420 Q450 480 400 520" stroke="rgba(255, 193, 7, 0.7)" strokeWidth="1.2" fill="none" />
+                  <path d="M500 420 Q550 480 600 520" stroke="rgba(255, 193, 7, 0.7)" strokeWidth="1.2" fill="none" />
                 </motion.g>
 
                 {/* Realistic Wing Spots and Patterns */}
                 <motion.g
                   animate={{ 
-                    opacity: [0.3, 0.7, 0.3],
+                    opacity: [0.5, 0.9, 0.5],
                     scale: [1, 1.05, 1]
                   }}
                   transition={{
@@ -310,20 +314,20 @@ const ButterflyHero: React.FC<ButterflyHeroProps> = ({ onAnimationComplete }) =>
                   }}
                 >
                   {/* Upper wing spots */}
-                  <circle cx="350" cy="360" r="15" fill="rgba(180, 180, 180, 0.6)" />
-                  <circle cx="350" cy="360" r="8" fill="rgba(120, 120, 120, 0.8)" />
-                  <circle cx="650" cy="360" r="15" fill="rgba(180, 180, 180, 0.6)" />
-                  <circle cx="650" cy="360" r="8" fill="rgba(120, 120, 120, 0.8)" />
+                  <circle cx="350" cy="360" r="18" fill="rgba(255, 140, 0, 0.8)" />
+                  <circle cx="350" cy="360" r="10" fill="rgba(255, 69, 0, 0.9)" />
+                  <circle cx="650" cy="360" r="18" fill="rgba(255, 140, 0, 0.8)" />
+                  <circle cx="650" cy="360" r="10" fill="rgba(255, 69, 0, 0.9)" />
                   
                   {/* Lower wing spots */}
-                  <circle cx="400" cy="500" r="10" fill="rgba(160, 160, 160, 0.5)" />
-                  <circle cx="600" cy="500" r="10" fill="rgba(160, 160, 160, 0.5)" />
+                  <circle cx="400" cy="500" r="12" fill="rgba(255, 165, 0, 0.7)" />
+                  <circle cx="600" cy="500" r="12" fill="rgba(255, 165, 0, 0.7)" />
                 </motion.g>
                 
                 {/* Ultra-Detailed Antennae */}
                 <motion.g
                   animate={{ 
-                    rotate: [0, 2, -2, 0],
+                    rotate: [0, 3, -3, 0],
                   }}
                   transition={{
                     repeat: Infinity,
@@ -331,12 +335,12 @@ const ButterflyHero: React.FC<ButterflyHeroProps> = ({ onAnimationComplete }) =>
                     ease: "easeInOut"
                   }}
                 >
-                  <path d="M490 290 Q485 270 480 250 Q478 240 475 230" stroke="rgba(80, 80, 80, 0.9)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                  <path d="M510 290 Q515 270 520 250 Q522 240 525 230" stroke="rgba(80, 80, 80, 0.9)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                  <path d="M490 290 Q485 270 480 250 Q478 240 475 230" stroke="rgba(139, 69, 19, 0.9)" strokeWidth="3" fill="none" strokeLinecap="round" />
+                  <path d="M510 290 Q515 270 520 250 Q522 240 525 230" stroke="rgba(139, 69, 19, 0.9)" strokeWidth="3" fill="none" strokeLinecap="round" />
                   
                   {/* Antennae clubs with detail */}
-                  <ellipse cx="475" cy="228" rx="3" ry="6" fill="rgba(60, 60, 60, 0.95)" />
-                  <ellipse cx="525" cy="228" rx="3" ry="6" fill="rgba(60, 60, 60, 0.95)" />
+                  <ellipse cx="475" cy="228" rx="4" ry="8" fill="rgba(101, 67, 33, 0.95)" />
+                  <ellipse cx="525" cy="228" rx="4" ry="8" fill="rgba(101, 67, 33, 0.95)" />
                 </motion.g>
               </svg>
             </motion.div>

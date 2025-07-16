@@ -121,11 +121,11 @@
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 15% 85%, rgba(209, 169, 128, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 85% 15%, rgba(116, 136, 115, 0.08) 0%, transparent 60%),
-    radial-gradient(circle at 45% 45%, rgba(209, 169, 128, 0.06) 0%, transparent 60%),
-    radial-gradient(circle at 70% 80%, rgba(116, 136, 115, 0.04) 0%, transparent 50%);
-  animation: cosmic-aurora 30s ease-in-out infinite;
+    radial-gradient(circle at 15% 85%, rgba(255, 215, 0, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 85% 15%, rgba(255, 193, 7, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 45% 45%, rgba(255, 165, 0, 0.10) 0%, transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(255, 140, 0, 0.08) 0%, transparent 50%);
+  animation: cosmic-aurora 35s ease-in-out infinite;
 }
 
 .live-cosmic-background::after {
@@ -136,32 +136,32 @@
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(2px 2px at 25px 35px, rgba(209, 169, 128, 0.4), transparent),
-    radial-gradient(2px 2px at 45px 75px, rgba(116, 136, 115, 0.3), transparent),
-    radial-gradient(1px 1px at 95px 45px, rgba(209, 169, 128, 0.5), transparent),
-    radial-gradient(1px 1px at 135px 85px, rgba(116, 136, 115, 0.4), transparent),
-    radial-gradient(2px 2px at 165px 35px, rgba(209, 169, 128, 0.3), transparent);
+    radial-gradient(2px 2px at 25px 35px, rgba(255, 215, 0, 0.6), transparent),
+    radial-gradient(2px 2px at 45px 75px, rgba(255, 193, 7, 0.5), transparent),
+    radial-gradient(1px 1px at 95px 45px, rgba(255, 165, 0, 0.7), transparent),
+    radial-gradient(1px 1px at 135px 85px, rgba(255, 140, 0, 0.6), transparent),
+    radial-gradient(2px 2px at 165px 35px, rgba(255, 69, 0, 0.5), transparent);
   background-repeat: repeat;
   background-size: 220px 120px;
-  animation: cosmic-drift 80s linear infinite;
+  animation: cosmic-drift 90s linear infinite;
 }
 
 @keyframes cosmic-aurora {
   0%, 100% { 
-    opacity: 0.5;
+    opacity: 0.6;
     transform: scale(1) rotate(0deg);
   }
   25% { 
-    opacity: 0.8;
-    transform: scale(1.15) rotate(90deg);
+    opacity: 0.9;
+    transform: scale(1.2) rotate(90deg);
   }
   50% { 
-    opacity: 0.6;
+    opacity: 0.7;
     transform: scale(0.95) rotate(180deg);
   }
   75% { 
-    opacity: 0.9;
-    transform: scale(1.1) rotate(270deg);
+    opacity: 1.0;
+    transform: scale(1.15) rotate(270deg);
   }
 }
 
