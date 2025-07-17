@@ -14,9 +14,9 @@ const ButterflyHero: React.FC<ButterflyHeroProps> = ({ onAnimationComplete }) =>
   const [isVisible, setIsVisible] = useState(true);
 
   // Enhanced smooth transform values with better easing
-  const butterflyY = useTransform(scrollY, [0, 800], [0, -400], { ease: easeInOut });
-  const butterflyScale = useTransform(scrollY, [0, 800], [1, 0.5], { ease: easeInOut });
-  const butterflyOpacity = useTransform(scrollY, [0, 400, 600], [1, 0.8, 0], { ease: easeInOut });
+  const butterflyY = useTransform(scrollY, [0, 800], [0, -600], { ease: easeInOut });
+  const butterflyScale = useTransform(scrollY, [0, 800], [1, 0.2], { ease: easeInOut });
+  const butterflyOpacity = useTransform(scrollY, [0, 600, 800], [1, 0.8, 0], { ease: easeInOut });
   const logoOpacity = useTransform(scrollY, [600, 800], [0, 1], { ease: easeInOut });
   const buttonsY = useTransform(scrollY, [0, 600], [0, -400], { ease: easeInOut });
   const buttonsOpacity = useTransform(scrollY, [0, 500], [1, 0], { ease: easeInOut });
